@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" styleClass="card-pane" stylesheets="@../../../css/app-dark.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcbclient.WelcomeController">
+    <Label text="欢迎使用AI智能检测系统" textAlignment="CENTER">
+        <font>
+            <Font name="System Bold" size="40.0" />
+        </font></Label>
+    <ImageView fx:id="imageView" fitHeight="300.0" fitWidth="400.0">
+      <image>
+         <Image url="@../../../images/pcb01.jpg" />
+      </image></ImageView>
+    <ProgressBar fx:id="progressBar" prefWidth="400.0" />
+</VBox>

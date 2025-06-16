@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="683.0" prefWidth="1061.0" styleClass="backgroundPane" stylesheets="@../../../css/app-dark.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcbclient.MonitorController">
+
+    <left>
+        <VBox alignment="CENTER" spacing="15">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <children>
+                <HBox alignment="CENTER" spacing="5">
+                    <Button onAction="#onSetTemplate" style="-fx-font-size: 20; -fx-background-color:#40beda;" styleClass="one-pill" text="模板设置" />
+                    <Button fx:id="detectBtn" onAction="#onDetect" style="-fx-font-size: 20; -fx-background-color:#da6940;" styleClass="one-pill" text="开始检测" />
+                </HBox>
+                <VBox alignment="CENTER" style="-fx-background-color: #4880ff" styleClass="card-pane">
+                    <Label fx:id="pcbResultLab" style="-fx-font-size: 70; " text="PASS" />
+                </VBox>
+                <VBox alignment="CENTER_LEFT" spacing="10" styleClass="card-pane">
+                    <VBox.margin>
+                        <Insets left="10.0" />
+                    </VBox.margin>
+                    <Label fx:id="detectTimeLab" style="-fx-font-size: 10; -body-text-color: #efe8a4" text="检测时间：无" />
+                    <Label fx:id="totalLab" style="-fx-font-size: 15;" text="总数：0" />
+                    <Label fx:id="goodLab" style="-fx-font-size: 15;" text="正确：0" />
+                    <Label fx:id="errorLab" style="-fx-font-size: 15;" text="错误：0" />
+                </VBox>
+                <VBox alignment="CENTER_LEFT" spacing="10" styleClass="card-pane">
+                    <VBox.margin>
+                        <Insets left="10.0" />
+                    </VBox.margin>
+                    <Label fx:id="deviceNoLab" style="-fx-font-size: 15" text="器件ID：23" />
+                    <Label fx:id="deviceTypeLab" style="-fx-font-size: 15" text="器件类型：23" />
+                    <Label fx:id="deviceResultLab" style="-fx-font-size: 15" text="检测结果：通过" />
+                    <Label fx:id="deviceMatchLab" style="-fx-font-size: 15" text="匹配度：通过" />
+                </VBox>
+                <VBox alignment="CENTER" spacing="5" style="-fx-background-color: #a4d4e6" styleClass="card-pane">
+                    <Label style="-fx-font-size: 15" text="器件图片" />
+                    <Canvas fx:id="deviceCanvas" height="150.0" style="-fx-background-color: #ffffff" width="200.0" />
+
+                </VBox>
+                <VBox alignment="CENTER" spacing="5" style="-fx-background-color: #1ea681" styleClass="card-pane">
+                    <Label style="-fx-font-size: 15" text="模板图片" />
+                    <Canvas fx:id="templeCanvas" height="150.0" style="-fx-background-color: #ffffff" width="200.0" />
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </VBox>
+    </left>
+    <center>
+        <Canvas fx:id="pcbCanvas" height="782.0" onMouseClicked="#onClickDevice" width="925.0" BorderPane.alignment="CENTER">
+        </Canvas>
+    </center>
+</BorderPane>
